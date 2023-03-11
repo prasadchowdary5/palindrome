@@ -1,0 +1,32 @@
+Wap check weather a number is palindrome or not?
+#include <stdio.h>
+
+int isPalindrome(int num) {
+    int reversed = 0, remainder, original = num;
+
+    while (num > 0) {
+        remainder = num % 10;
+        reversed = reversed * 10 + remainder;
+        num /= 10;
+    }
+
+    if (original == reversed) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (isPalindrome(num)) {
+        printf("%d is a palindrome number", num);
+    } else {
+        printf("%d is not a palindrome number", num);
+    }
+
+    return 0;
+}
